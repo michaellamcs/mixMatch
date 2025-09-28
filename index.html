@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Effects of Child Abuse - Matching Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Header -->
+        <header class="game-header">
+            <h1>Effects of Child Abuse</h1>
+            <div class="progress-bar">
+                <span id="progress">0</span> / <span id="total">9</span> matched
+                <button class="btn btn--secondary btn--sm" id="resetBtn">Reset</button>
+            </div>
+        </header>
+
+        <!-- Draggable Topic Cards Section -->
+        <section class="topics-section">
+            <div class="topics-container" id="topicsContainer">
+                <!-- Topic cards will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Drop Zones Section -->
+        <section class="drop-zones-section">
+            <div class="drop-zones-container">
+                <div class="drop-zone" data-dimension="Physical Dimension">
+                    <div class="drop-zone-header" style="background-color: #ff6b6b;">
+                        <h3>Physical Dimension</h3>
+                    </div>
+                    <div class="drop-zone-content" data-dimension="Physical Dimension"></div>
+                </div>
+
+                <div class="drop-zone" data-dimension="Psychological Dimension">
+                    <div class="drop-zone-header" style="background-color: #4ecdc4;">
+                        <h3>Psychological Dimension</h3>
+                    </div>
+                    <div class="drop-zone-content" data-dimension="Psychological Dimension"></div>
+                </div>
+
+                <div class="drop-zone" data-dimension="Social/Behavioural Dimension">
+                    <div class="drop-zone-header" style="background-color: #45b7d1;">
+                        <h3>Social/Behavioural Dimension</h3>
+                    </div>
+                    <div class="drop-zone-content" data-dimension="Social/Behavioural Dimension"></div>
+                </div>
+
+                <div class="drop-zone" data-dimension="Spiritual Dimension">
+                    <div class="drop-zone-header" style="background-color: #96ceb4;">
+                        <h3>Spiritual Dimension</h3>
+                    </div>
+                    <div class="drop-zone-content" data-dimension="Spiritual Dimension"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Success Modal -->
+        <div class="success-modal hidden" id="successModal">
+            <div class="success-content">
+                <h2>🎉 Excellent Work!</h2>
+                <p>You have successfully matched all effects to their correct dimensions!</p>
+                <button class="btn btn--primary" id="playAgainBtn">Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
