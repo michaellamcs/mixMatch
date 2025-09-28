@@ -3,59 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Effects of Child Abuse - Matching Game</title>
+    <title>Child Response to Physical Abuse - Matching Game</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
 </head>
 <body>
     <div class="game-container">
         <!-- Header -->
         <header class="game-header">
-            <h1>Effects of Child Abuse</h1>
+            <h1>Child Response to Physical Abuse</h1>
             <div class="progress-bar">
                 <span id="progress">0</span> / <span id="total">9</span> matched
                 <button class="btn btn--secondary btn--sm" id="resetBtn">Reset</button>
             </div>
         </header>
 
-        <!-- Draggable Topic Cards Section -->
-        <section class="topics-section">
-            <div class="topics-container" id="topicsContainer">
-                <!-- Topic cards will be populated by JavaScript -->
+        <!-- Main Content - Split Layout -->
+        <div class="main-content">
+            <!-- Left Side: Scrollable Topic Cards -->
+            <section class="topics-section">
+                <h2 class="section-title">Topic Cards</h2>
+                <div class="topics-container" id="topicsContainer">
+                    <!-- Topic cards will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Right Side: Fixed Drop Zones -->
+            <section class="drop-zones-section">
+                <h2 class="section-title">Dimensions</h2>
+                <div class="drop-zones-container">
+                    <div class="drop-zone" data-dimension="Physical Dimension">
+                        <div class="drop-zone-header" style="background-color: #ff6b6b;">
+                            <h3>Physical Dimension</h3>
+                        </div>
+                        <div class="drop-zone-content" id="physical-dimension" data-dimension="Physical Dimension"></div>
+                    </div>
+
+                    <div class="drop-zone" data-dimension="Psychological Dimension">
+                        <div class="drop-zone-header" style="background-color: #4ecdc4;">
+                            <h3>Psychological Dimension</h3>
+                        </div>
+                        <div class="drop-zone-content" id="psychological-dimension" data-dimension="Psychological Dimension"></div>
+                    </div>
+
+                    <div class="drop-zone" data-dimension="Social/Behavioural Dimension">
+                        <div class="drop-zone-header" style="background-color: #45b7d1;">
+                            <h3>Social/Behavioural Dimension</h3>
+                        </div>
+                        <div class="drop-zone-content" id="social-dimension" data-dimension="Social/Behavioural Dimension"></div>
+                    </div>
+
+                    <div class="drop-zone" data-dimension="Spiritual Dimension">
+                        <div class="drop-zone-header" style="background-color: #96ceb4;">
+                            <h3>Spiritual Dimension</h3>
+                        </div>
+                        <div class="drop-zone-content" id="spiritual-dimension" data-dimension="Spiritual Dimension"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Long Press Popup -->
+        <div class="popup-overlay hidden" id="popupOverlay">
+            <div class="popup-content">
+                <button class="popup-close" id="popupClose">&times;</button>
+                <h3 id="popupTitle"></h3>
+                <p id="popupSubtopic"></p>
             </div>
-        </section>
-
-        <!-- Drop Zones Section -->
-        <section class="drop-zones-section">
-            <div class="drop-zones-container">
-                <div class="drop-zone" data-dimension="Physical Dimension">
-                    <div class="drop-zone-header" style="background-color: #ff6b6b;">
-                        <h3>Physical Dimension</h3>
-                    </div>
-                    <div class="drop-zone-content" data-dimension="Physical Dimension"></div>
-                </div>
-
-                <div class="drop-zone" data-dimension="Psychological Dimension">
-                    <div class="drop-zone-header" style="background-color: #4ecdc4;">
-                        <h3>Psychological Dimension</h3>
-                    </div>
-                    <div class="drop-zone-content" data-dimension="Psychological Dimension"></div>
-                </div>
-
-                <div class="drop-zone" data-dimension="Social/Behavioural Dimension">
-                    <div class="drop-zone-header" style="background-color: #45b7d1;">
-                        <h3>Social/Behavioural Dimension</h3>
-                    </div>
-                    <div class="drop-zone-content" data-dimension="Social/Behavioural Dimension"></div>
-                </div>
-
-                <div class="drop-zone" data-dimension="Spiritual Dimension">
-                    <div class="drop-zone-header" style="background-color: #96ceb4;">
-                        <h3>Spiritual Dimension</h3>
-                    </div>
-                    <div class="drop-zone-content" data-dimension="Spiritual Dimension"></div>
-                </div>
-            </div>
-        </section>
+        </div>
 
         <!-- Success Modal -->
         <div class="success-modal hidden" id="successModal">
