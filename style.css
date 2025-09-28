@@ -737,7 +737,6 @@ select.form-control {
     format('woff2');
 }
 
-/* END PERPLEXITY DESIGN SYSTEM */
 /* Game-specific styles for split-screen layout */
 .game-container {
   display: flex;
@@ -835,15 +834,15 @@ select.form-control {
   border-radius: var(--radius-base);
   padding: var(--space-12);
   cursor: grab;
-  transition: all var(--duration-normal) var(--ease-standard);
+  /* transition: all var(--duration-normal) var(--ease-standard); */
   box-shadow: var(--shadow-sm);
   user-select: none;
-  position: relative;
+  /* position: relative; */ /* This was causing the conflict */
   flex-shrink: 0;
+  touch-action: pan-y; /* Added for better touch handling, like in the working copy */
 }
 
 .topic-card:hover {
-  transform: translateY(-2px);
   box-shadow: var(--shadow-md);
   border-color: var(--color-primary);
 }
@@ -856,21 +855,17 @@ select.form-control {
 .topic-card.sortable-ghost {
   opacity: 0.4;
   background-color: var(--color-bg-1);
-  transform: rotate(2deg);
+  /* transform: rotate(2deg); */
 }
 
 .topic-card.sortable-chosen {
   cursor: grabbing;
-  transform: scale(1.02);
+  /* transform: scale(1.02); */
   box-shadow: var(--shadow-lg);
-  z-index: 1000;
 }
 
 .topic-card.sortable-drag {
-  opacity: 0.8;
-  transform: rotate(2deg) scale(1.05);
-  box-shadow: var(--shadow-lg);
-  z-index: 1001;
+  opacity: 1 !important;
 }
 
 .topic-title {
@@ -904,7 +899,7 @@ select.form-control {
 .drop-zone.sortable-drag-over {
   border-color: var(--color-primary);
   background-color: var(--color-bg-1);
-  transform: scale(1.02);
+  /* transform: scale(1.02); */
   box-shadow: var(--shadow-lg);
 }
 

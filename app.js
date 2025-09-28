@@ -115,7 +115,7 @@ function setupLongPress(element, topic) {
             if (!isDragging) {
                 showPopup(topic.title, topic.subtopic);
             }
-        }, 500);
+        }, 1000);
     };
 
     const endPress = () => {
@@ -177,6 +177,9 @@ function setupSortable() {
             scroll: true,
             scrollSensitivity: 70,
             scrollSpeed: 15,
+            // CHANGE: Add a delay on touch devices to distinguish scrolling from dragging
+            delay: 100, // 100ms delay
+            delayOnTouchOnly: true, // Only applies to touch
             ghostClass: 'sortable-ghost',
             chosenClass: 'sortable-chosen',
             dragClass: 'sortable-drag',
@@ -202,6 +205,8 @@ function setupSortable() {
                 },
                 animation: 150,
                 forceFallback: true,
+                delay: 100, // 100ms delay
+                delayOnTouchOnly: true, // Only applies to touch
                 ghostClass: 'sortable-ghost',
                 onAdd: function(evt) {
                     const item = evt.item;
