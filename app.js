@@ -10,6 +10,7 @@ const gameData = {
             "name": "Psychological Dimension",
             "color": "#4ecdc4",
             "topics": [
+                {"title": "Self-blaming for everything", "subtopic": "Reasoning for abused behaviours; the abuse is due to my 'fault'; self-blame → lower self-confidence and sense of value"},
                 {"title": "Hypervigilance", "subtopic": "fearful and stressful of abusive damage → anxiety, insomnia, and nightmares"},
                 {"title": "Chronic stress", "subtopic": "brain dysfunction → emotional outbursts, a lack of focus, poor memory and learning difficulties; sustained stress response → risk of heart disease, autoimmune disorders"}
             ]
@@ -20,7 +21,6 @@ const gameData = {
             "topics": [
                 {"title": "Resistance to initiate relationships", "subtopic": "Dismantle of trust; formation of insecure attachment patterns → viewing their caregivers as unpredictable or even dangerous"},
                 {"title": "Social withdrawal", "subtopic": "Negative models of self and others; feeling of 'I am not worthy of love' → low self-esteem; feeling that 'others are not trustworthy' → worthlessness → social withdrawal"},
-                {"title": "Self-blaming for everything", "subtopic": "Reasoning for abused behaviours; the abuse is due to my 'fault'; self-blame → lower self-confidence and sense of value"},
                 {"title": "Negatively rewired response", "subtopic": "repeated abuse in a confined space → classical conditioning → claustrophobia"}
             ]
         },
